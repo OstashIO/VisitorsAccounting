@@ -1,0 +1,52 @@
+﻿<Window x:Class="VisitorsAccounting.Views.AddItem1View"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VisitorsAccounting.Views"
+        mc:Ignorable="d"
+        Title="Добавление" Height="150" Width="300"
+        Style="{StaticResource WindowStyle}"
+        WindowStartupLocation="CenterScreen"
+        Icon="../Resources/Add_icon.ico">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        <Label 
+            Grid.Column="0"
+            Grid.ColumnSpan="4" 
+            Content="Введите документ:" 
+            Style="{StaticResource LabelStyle}"/>
+
+        <TextBox 
+            Grid.Column="0"
+            Grid.ColumnSpan="4" 
+            Grid.Row="1" 
+            Text="{Binding Path=Field, Mode=TwoWay}"
+            Style="{StaticResource TextBoxStyle}"/>
+
+        <Button 
+            Grid.Row="2" 
+            Grid.Column="1" 
+            Content="ОК" 
+            Command="{Binding Ok}" 
+            Style="{DynamicResource ButtonStyle}"/>
+
+        <Button 
+            Grid.Row="2" 
+            Grid.Column="2" 
+            Content="Отмена" 
+            Command="{Binding Cancel}" 
+            Style="{DynamicResource ButtonStyle}"/>
+    </Grid>
+</Window>
